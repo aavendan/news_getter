@@ -1,0 +1,35 @@
+*~
+*.sw[mnpcod]
+*.log
+*.tmp
+*.tmp.*
+log.txt
+npm-debug.log*
+.idea/
+.vscode/
+.sass-cache/
+.tmp/
+.versions/
+coverage/
+dist/
+tmp/
+temp/
+www/
+
+# Dependency directories
+node_modules/
+platforms/
+plugins/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+UserInterfaceState.xcuserstate
+
+# Capacitor specific
+capacitor-android-assets/
+capacitor-ios-assets/
+
+# If you are using a specific bundler (e.g., Webpack, Vite, Parcel), add its output directory here
+# For create-react-app/Webpack, this is often 'build/'
+build/
