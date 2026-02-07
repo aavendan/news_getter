@@ -10,17 +10,16 @@ const Tab1: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>News Reader</IonTitle>
+          <IonTitle>Lector de Noticias</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Reader</IonTitle>
+            <IonTitle size="large">Descargar</IonTitle>
           </IonToolbar>
         </IonHeader>
         <Reader/>
-        {/* <ExploreContainer name="Reader" /> */}
       </IonContent>
     </IonPage>
   );

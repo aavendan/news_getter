@@ -21,6 +21,7 @@ let SECTIONS = [
 
 const Reader: React.FC = () => {
 
+    const [loading, setLoading] = useState(false);
     const [ready, setReady] = useState(false);
     const [load, setLoad] = useState(false);
     const [results, setResults] = useState<any>([]);
@@ -43,6 +44,8 @@ const Reader: React.FC = () => {
 
                     const xml = await response.text();
 
+                    setLoading(true);
+
                     const parser = new XMLParser();
                     let dataObj = await parser.parse(xml);
 
@@ -52,6 +55,7 @@ const Reader: React.FC = () => {
                 setResults(data);
                 setTitles(titles);
                 setReady(true);
+                setLoading(false);
             
             };
 
@@ -66,7 +70,12 @@ const Reader: React.FC = () => {
             <IonRow class="ion-justify-content-ce nter">
                 <IonCol><IonButton onClick={() => setLoad(true)}>Cargar Noticias</IonButton></IonCol>
             </IonRow>
-            {ready && (
+            {loading && (
+                <IonRow>
+                        <IonCol>Cargando ... </IonCol>
+                </IonRow>
+            )}
+            {(ready && !loading)  && (
                 results?.map((group: any, index: number) => (
                     <IonRow key={index}>
                         <IonCol>{SECTIONS[index]} - {group?.rss?.channel?.item?.length} noticias</IonCol>

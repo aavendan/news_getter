@@ -36,7 +36,6 @@ export default function useFetchData(cargar: boolean): any {
                 const parser = new XMLParser();
                 let data = parser.parse(text);
 
-
                 // Respuesta exitosa
                 return {
                     success: true,
